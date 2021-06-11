@@ -1,0 +1,28 @@
+{
+  "name": "w-jsc-502-ncy-2-1-irc-josselyn.letty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechIT2020/W-JSC-502-NCY-2-1-irc-josselyn.letty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechIT2020/W-JSC-502-NCY-2-1-irc-josselyn.letty/issues"
+  },
+  "homepage": "https://github.com/EpitechIT2020/W-JSC-502-NCY-2-1-irc-josselyn.letty#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
