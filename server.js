@@ -31,11 +31,6 @@ io.on('connection', socket => {
         socket.leave(channelName)
     })
 
-    // socket.on('changeChannel', (oldChannel, newChannel) => {
-    //     socket.leave(oldChannel)
-    //     socket.join(newChannel)
-    // })
-
     socket.on('joinChannel', ({username, channel}) => {       
         users = setUsers(socket, username, channel)
         channels = setChannels(channel)
@@ -72,15 +67,6 @@ io.on('connection', socket => {
             content : msg,
             date : moment().format('h:mm:a')
         })
-
-        // if (user == undefined) {
-        //     setUsers()
-        // } else {
-        //     console.log('not unde')
-        //     const index = users.findIndex(element => element.username === username)
-        //     console.log(users[index].channel)
-        //     users[index].channel = channel 
-        // } 
     })
 
     socket.on('newMessage', (data) => {
@@ -129,7 +115,7 @@ io.on('connection', socket => {
             
             channelLeft != -1 ? channelLeft.connected -= 1 : null
     
-            // Supprime le channel si personne ne se connecte dessus au bout de 5s
+            // Supprime le channel si personne ne se connecte dessus au bout de 15s
             const timerObj = setTimeout(() => {
                 if (channelLeft.connected <= 0) {
                     const channelIndex = getChannelIndex(user.channel)
