@@ -1,0 +1,8 @@
+.test {
+    border: 1px Solid red;
+    border-radius: 5px;
+    color: red;
+    text-align: center;
+    padding: 5px;
+    background: none;
+}

@@ -1,15 +1,15 @@
 import React, {useLocation, useParams, useState, useEffect} from 'react'
+import { io } from "socket.io-client";
+const ENDPOINT = "http://127.0.0.1:3000";
 
 export default function Accueil () {
 
     const [userName, setUsername] = useState('')
     const [channel, setChannel] = useState('')
-    const [warning, setWarning] = useState()
-
+    const [warning, setWarning] = useState('')
 
     function handleSubmit (e) {
         e.preventDefault()
-        setWarning(null)
         if ((userName || channel) === '') {
             setWarning('fill in all the fields')
             return;

@@ -14,15 +14,18 @@ import Channel from './components/Channel';
 const ENDPOINT = "http://127.0.0.1:3000";
 
 function App() {
+  const socket = io(ENDPOINT);
 
   const [response, setResponse] = useState("");
   
   useEffect(() => {
-    const socket = io(ENDPOINT);
     socket.on("message", data => {
       setResponse(data);
       console.log(data);
     });
+    socket.on('joinChannel', (data) => {
+      console.log('join')
+  })
   }, []);
 
   return (
